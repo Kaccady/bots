@@ -3,10 +3,17 @@ body {
   font-family: Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1d2637;
+  background-color: #1d2646;
 }
-.App{display: flex;
-flex-direction: column;}
+p {
+  margin: 0;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  margin-top: 60px;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -14,26 +21,64 @@ code {
 }
 .title-bar {
   display: flex;
-  margin: 30px;
-  margin-top:60px;
-  justify-content:space-between;
+
+  justify-content: space-between;
 }
 .menu-icon {
   background-image: url(layers/Title_bar/menu_icon.png);
   background-repeat: no-repeat;
   height: 30px;
   width: 40px;
- 
 }
-.dashboard {
-  background-image: url(layers/Title_bar/dashboard.png);
-  background-repeat: no-repeat;
-  height: 30px;
-  width: 170px;
-}
-.refresh{
+.refresh {
   background-image: url(layers/Title_bar/refresh.png);
   background-repeat: no-repeat;
   height: 40px;
   width: 40px;
+}
+.balance {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.balance-text {
+  font-size: 27px;
+  color: rgb(84, 96, 118);
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: left;
+}
+.balance-lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.balance-capital {
+  font-size: 70px;
+  color: rgb(255, 255, 255);
+  text-align: right;
+  align-items: flex-end;
+}
+.balance-lower-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    align-items: flex-end;
+}
+.balance-lower-right-low {
+  display: flex;
+  margin-bottom: 4px;
+}
+.balance-text-quantity {
+  font-size: 27px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-align: right;
+  margin: 0px 10px 0px 20px;
+}
+.coin-ico {
+  background-image: url(layers/balance/coin.png);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
 }
