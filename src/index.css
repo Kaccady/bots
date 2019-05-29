@@ -3,7 +3,7 @@ body {
   font-family: Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1d2646;
+  background-color: #1d2637;
 }
 p {
   margin: 0;
@@ -15,8 +15,13 @@ p {
 .first-set {
   display: flex;
   flex-direction: column;
-  margin: 30px;
-  margin-top: 60px;
+  margin: 20px;
+  margin-top: 30px;
+}
+.second-set {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
 }
 
 code {
@@ -92,4 +97,62 @@ code {
 }
 img {
   border: none;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #252d40;
+  width: 122px;
+  height: 122px;
+  margin: 1px;
+  border-radius: 5px;
+}
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.bot {
+  width: 60px;
+  height: auto;
+}
+.bot-type {
+  text-align: center;
+}
+.HEREnon {
+  display: none;
+}
+.bot-type {
+  font-size: 13px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  margin: 10px 10px 0px 10px;
+}
+.HERE {
+  color: rgb(84, 96, 118);
+}
+.percent {
+  font-size: 13px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+.orange_bot {
+  order: 0;
+}
+.white_bot {
+  order: 1;
+}
+.blue_bot {
+  order: 2;
+}
+.green_bot {
+  order: 3;
+}
+.yellow_bot {
+  order: 4;
+}
+.red_bot {
+  order: 5;
 }
