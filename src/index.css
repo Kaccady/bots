@@ -121,8 +121,10 @@ img {
   justify-content: center;
   align-items: center;
   background-color: #252d40;
-  width: 122px;
-  height: 122px;
+  min-width: 110px;
+  max-width: 120px;
+  width: 100%;
+  height: 110px;
   margin: 1px;
   border-radius: 5px;
 }
@@ -181,7 +183,7 @@ img {
 .time-buttons {
   display: flex;
   justify-content: space-around;
-  margin-top:15px;
+  margin-top: 15px;
 }
 .time-buttons-name {
   color: rgb(84, 96, 118);
@@ -212,4 +214,19 @@ img {
 .selected {
   color: white;
   border-color: white;
+}
+button,
+button:active,
+button:focus {
+  outline: none;
+}
+.bg {
+  width: 100%;
+  position: absolute;
+}
+.arrows {
+  width: 164px;
+  position: absolute;
+  bottom: 205px;
+  right: 123px;
 }

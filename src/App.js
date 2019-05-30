@@ -15,6 +15,8 @@ import megabotButton from './layers/Tool_bar/2.png';
 import botMarketButton from './layers/Tool_bar/3.png';
 import coinPricesButton from './layers/Tool_bar/4.png';
 import profileButton from './layers/Tool_bar/5.png';
+import bg from './layers/bg/bg.png';
+import arrows from './layers/arrows.png';
 
 const BotSetter = name => {
   switch (name) {
@@ -60,7 +62,8 @@ const TimeButtons = ({ func,select }) =>
       {item.name}
     </button>
   ));
-
+let a = document.getElementsByClassName('yellow_bot');
+console.log(a,a[0],a.item[0],a.namedItem('yellow_bot'),);
 function App() {
   const [data, setData] = useState(0);
   const [timeInterval, setTimeInterval] = useState("all_time");
@@ -74,6 +77,7 @@ function App() {
   }
   return (
     <div className="App">
+      <img src={bg} alt='bg' className='bg'/>
       <div className="first-set">
         <div className="title-bar">
           <img src={menuIcon} alt="menu-icon" className="menu-icon" />
@@ -130,7 +134,7 @@ function App() {
         <img className='tool-bar-button' alt='menu' src={coinPricesButton}/>
         <img className='tool-bar-button' alt='menu' src={profileButton}/>
       </div>
-      
+      <img className='arrows' src={arrows} alt='arrows'/>
     </div>
   );
 }
