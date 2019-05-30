@@ -10,6 +10,11 @@ import green_bot from "./layers/Bots/green.png";
 import red_bot from "./layers/Bots/red.png";
 import blue_bot from "./layers/Bots/blue.png";
 import empty from "./layers/Bots/empty.png";
+import dashboardButton from './layers/Tool_bar/1.png';
+import megabotButton from './layers/Tool_bar/2.png';
+import botMarketButton from './layers/Tool_bar/3.png';
+import coinPricesButton from './layers/Tool_bar/4.png';
+import profileButton from './layers/Tool_bar/5.png';
 
 const BotSetter = name => {
   switch (name) {
@@ -32,20 +37,33 @@ const Box = ({ bot, time }) => {
   let info = BotSetter(bot.name)
     ? BotSetter(bot.name)
     : { img: "none", type: "none" };
-  let isPositive = bot[time] ? "positive" : "negative";
-  console.log(isPositive);
+  let isPositive = bot[time] > 0 ? "positive" : "negative";
   return (
     <div className={"box " + bot.name}>
       <img className="bot" src={info.img} alt="bot" />
       <p className={info.type + " bot-type"}>{info.type}</p>
-      <p className={info.type + `non percent `+isPositive}>{bot[time] + "%"}</p>
+      <p className={info.type + `non percent ` + isPositive}>
+        {bot[time] + "%"}
+      </p>
     </div>
   );
 };
+const timeArr = [
+  { id: "24h", name: "24h" },
+  { id: "7d", name: "7 days" },
+  { id: "30d", name: "30 days" },
+  { id: "all_time", name: "All time" }
+];
+const TimeButtons = ({ func,select }) =>
+  timeArr.map(item => (
+    <button className={(item.id!==select)?'time-button':'time-button selected'} key={item.name} onClick={() => func(item.id)}>
+      {item.name}
+    </button>
+  ));
+
 function App() {
   const [data, setData] = useState(0);
   const [timeInterval, setTimeInterval] = useState("all_time");
-
   useEffect(() => {
     if (data === 0) {
       setData(robotsData);
@@ -100,7 +118,19 @@ function App() {
             <Box key={item.name} bot={item} time={timeInterval} />
           ))}
         </div>
+        <div className="time-buttons">
+          <p className="time-buttons-name">Time Range:</p>
+          <TimeButtons func={setTimeInterval} select={timeInterval} />
+        </div>
       </div>
+      <div className='tool-bar'>
+        <img className='tool-bar-button' alt='menu' src={dashboardButton}/>
+        <img className='tool-bar-button' alt='menu' src={megabotButton}/>
+        <img className='tool-bar-button' alt='menu' src={botMarketButton}/>
+        <img className='tool-bar-button' alt='menu' src={coinPricesButton}/>
+        <img className='tool-bar-button' alt='menu' src={profileButton}/>
+      </div>
+      
     </div>
   );
 }
